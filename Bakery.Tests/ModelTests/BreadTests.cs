@@ -28,5 +28,13 @@ namespace Bakery.Tests
             int result = newBread.BreadCost();
             Assert.AreEqual(15, result);
         }
+        [TestMethod]
+        public void BreadDiscount_SubtractsDiscountFromBreadPrice_Int()
+        {
+            Bread newBread = new Bread(3);
+            int price = newBread.BreadCost();
+            int discountedPrice = newBread.BreadDiscount(price);
+            Assert.AreEqual(10, discountedPrice);
+        }
     }
 }

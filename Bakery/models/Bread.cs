@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 
 namespace Bakery.Models
 {
@@ -11,8 +12,15 @@ namespace Bakery.Models
         }
         public int BreadCost()
         {
-            int breadCost = 5 * BreadCount;
-            return breadCost;
+            int price = 5 * BreadCount;
+            return price;
+        }
+        public int BreadDiscount(int price)
+        {
+            int freeBread = (int)Math.Floor((double)BreadCount / 3);
+            int freeBreadValue = freeBread * 5;
+            int discountedPrice = price - freeBreadValue;
+            return discountedPrice;
         }
     }
 }
