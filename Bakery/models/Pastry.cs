@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System;
 
 namespace Bakery.Models
 {
@@ -13,6 +13,13 @@ namespace Bakery.Models
         {
             int price = 2 * PastryCount;
             return price;
+        }
+        public int PastryDiscount(int price)
+        {
+            int freePastry = (int)Math.Floor((double)PastryCount / 4);
+            int freePastryValue = freePastry * 2;
+            int discountedPrice = price - freePastryValue;
+            return discountedPrice;
         }
     }
 }
