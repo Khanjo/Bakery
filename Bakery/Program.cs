@@ -9,13 +9,19 @@ namespace Bakery
     {
         static void Main()
         {
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.BackgroundColor = ConsoleColor.Cyan;
             Console.WriteLine(WelcomeBanner.Welcome);
+            Console.ResetColor();
+            Console.WriteLine("");
             Console.WriteLine("Hello!");
             int discountBreadPrice = Bread();
             int discountPastryPrice = Pastry();
             int total = discountBreadPrice + discountPastryPrice;
             Console.WriteLine("The total for your order will be:");
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("$" + total);
+            Console.ResetColor();
             Console.Read();
         }
         static int Bread()
@@ -28,9 +34,12 @@ namespace Bakery
                 Bread breadOrder = new Bread(breadCount);
                 int breadPrice = breadOrder.BreadCost();
                 int discountBreadPrice = breadOrder.BreadDiscount(breadPrice);
+                Console.WriteLine("");
                 Console.WriteLine("The total for your bread will be:");
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("$" + discountBreadPrice);
-                Console.Read();
+                Console.ResetColor();
+                Console.WriteLine("");
                 return discountBreadPrice;
             }
             else
@@ -49,9 +58,12 @@ namespace Bakery
                 Pastry pastryOrder = new Pastry(pastryCount);
                 int pastryPrice = pastryOrder.PastryCost();
                 int discountPastryPrice = pastryOrder.PastryDiscount(pastryPrice);
+                Console.WriteLine("");
                 Console.WriteLine("The total for your pastries will be:");
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("$" + discountPastryPrice);
-                Console.Read();
+                Console.ResetColor();
+                Console.WriteLine("");
                 return discountPastryPrice;
             }
             else
