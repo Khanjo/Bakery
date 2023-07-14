@@ -9,7 +9,7 @@ namespace Bakery
     {
         static void Main()
         {
-
+            Console.WriteLine(WelcomeBanner.Welcome);
         }
     }
 }
