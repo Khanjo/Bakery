@@ -17,10 +17,16 @@ namespace Bakery.Tests
         [TestMethod]
         public void GetBreadCount_ReturnsBreadCount_Int()
         {
-            int count = 3;
-            Bread newBread = new Bread(count);
+            Bread newBread = new Bread(3);
             int result = newBread.BreadCount;
-            Assert.AreEqual(count, result);
+            Assert.AreEqual(3, result);
+        }
+        [TestMethod]
+        public void BreadCost_ReturnsPriceOfBread_Int()
+        {
+            Bread newBread = new Bread(3);
+            int result = newBread.BreadCost();
+            Assert.AreEqual(15, result);
         }
     }
 }

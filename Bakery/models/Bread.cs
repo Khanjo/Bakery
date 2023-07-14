@@ -9,5 +9,10 @@ namespace Bakery.Models
         {
             BreadCount = count;
         }
+        public int BreadCost()
+        {
+            int breadCost = 5 * BreadCount;
+            return breadCost;
+        }
     }
 }
